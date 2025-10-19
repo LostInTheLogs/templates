@@ -1,9 +1,13 @@
 {
   description = "A collection of flake templates";
 
-  outputs = { self }: {
-
+  outputs = {self}: {
     templates = {
+      cpp = {
+        path = ./cpp;
+        description = "My cpp flake";
+      };
+      #
 
       trivial = {
         path = ./trivial;
@@ -42,7 +46,7 @@
 
       ruby = {
         path = ./ruby;
-        description = "Flake for building ruby gems" ;
+        description = "Flake for building ruby gems";
         welcomeText = ''
           # Simple Ruby Gem Template
           ## Intended usage
@@ -160,6 +164,5 @@
     };
 
     defaultTemplate = self.templates.trivial;
-
   };
 }
